@@ -12,7 +12,7 @@ metadata:
     
     # Fetch the git-clone task from hub, we are able to reference later on it
     # with taskRef and it will automatically be embedded into our pipeline.
-    pipelinesascode.tekton.dev/task: "[git-clone, golang-build]"
+    pipelinesascode.tekton.dev/task: "[git-clone, s2i-go]"
     
     # You can add more tasks in here to reuse, browse the one you like from here
     # https://hub.tekton.dev/
@@ -61,13 +61,10 @@ spec:
         runAfter:
           - fetch-repository
         taskRef:
-          name: golang-build
+          name: s2i-go
         workspaces:
           - name: source
             workspace: source
-        params:
-        - name: package
-          value: go-rest-service
       # Customize this task if you like, or just do a taskRef
       # to one of the hub task.
       - name: noop-task

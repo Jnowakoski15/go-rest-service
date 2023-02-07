@@ -31,7 +31,7 @@ spec:
       value: "{{ revision }}"
   podTemplate:
     securityContext:
-      fsGroup: 65532
+      #fsGroup: 65532
       allowPrivilegeEscalation: false
       seccompProfile:
         type: RuntimeDefault

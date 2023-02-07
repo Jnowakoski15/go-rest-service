@@ -29,12 +29,12 @@ spec:
       value: "{{ repo_url }}"
     - name: revision
       value: "{{ revision }}"
-  podTemplate:
-    securityContext:
-      fsGroup: 65532
-      allowPrivilegeEscalation: false
-      seccompProfile:
-        type: RuntimeDefault
+  #podTemplate:
+  #  securityContext:
+  #    fsGroup: 65532
+  #    allowPrivilegeEscalation: false
+  #    seccompProfile:
+  #      type: RuntimeDefault
   pipelineSpec:
     params:
       - name: repo_url

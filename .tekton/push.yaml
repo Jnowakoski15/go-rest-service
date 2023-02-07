@@ -53,6 +53,7 @@ spec:
         podTemplate:
           securityContext:
             fsGroup: 65532
+            allowPrivilegeEscalation: false
   
       # Customize this task if you like, or just do a taskRef
       # to one of the hub task.

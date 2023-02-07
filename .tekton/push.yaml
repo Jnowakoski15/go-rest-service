@@ -65,6 +65,9 @@ spec:
         workspaces:
           - name: source
             workspace: source
+        params:
+        - name: package
+          value: go-rest-service
       # Customize this task if you like, or just do a taskRef
       # to one of the hub task.
       - name: noop-task

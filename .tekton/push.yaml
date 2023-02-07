@@ -57,12 +57,21 @@ spec:
             value: $(params.repo_url)
           - name: revision
             value: $(params.revision)
-  
+
+      - name: build-go-code
+        runAfter:
+          - fetch-repository
+        taskRef:
+          name: git-clone
+        workspaces:
+          - name: source
+            workspace: source
+        
       # Customize this task if you like, or just do a taskRef
       # to one of the hub task.
       - name: noop-task
         runAfter:
-          - fetch-repository
+          - build-go-code
         workspaces:
           - name: source
             workspace: source

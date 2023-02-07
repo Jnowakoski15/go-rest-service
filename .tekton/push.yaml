@@ -32,9 +32,9 @@ spec:
   podTemplate:
     securityContext:
       #fsGroup: 65532
-      #allowPrivilegeEscalation: false
-      #seccompProfile:
-      #  type: RuntimeDefault
+      allowPrivilegeEscalation: false
+      seccompProfile:
+        type: RuntimeDefault
   pipelineSpec:
     params:
       - name: repo_url
